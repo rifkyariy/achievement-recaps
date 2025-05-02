@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+
 import {
   Table,
   TableBody,
@@ -45,6 +47,15 @@ export default function SpreadsheetViewer() {
   const headers = hasHeader ? data[0] : []
   const rows = hasHeader ? data.slice(1) : []
 
+  const convertCamelCaseToWords = (str: string) => {
+    return str
+      .replace(/([a-z])([A-Z])/g, "$1 $2")
+      .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")
+      .replace(/_/g, " ")
+      .toLowerCase()
+      .replace(/\b\w/g, (char) => char.toUpperCase())
+  }
+
   return (
     <div className="p-6 bg-white shadow rounded-md">
       <div className="flex items-center justify-between mb-4">
@@ -60,7 +71,9 @@ export default function SpreadsheetViewer() {
             <TableHeader>
               <TableRow>
                 {headers.map((header, i) => (
-                  <TableHead key={i}>{header}</TableHead>
+                  <TableHead key={i}>{
+                    convertCamelCaseToWords(header)
+                  }</TableHead>
                 ))}
               </TableRow>
             </TableHeader>

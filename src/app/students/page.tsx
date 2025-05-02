@@ -1,4 +1,4 @@
-import SpreadsheetViewer from "@/components/SpreadsheetViewer"
+import SpreadsheetViewer from "@/components/custom/SpreadsheetViewer"
 
 export default function HomePage() {
   return (

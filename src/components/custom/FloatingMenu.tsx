@@ -15,7 +15,7 @@ export function BottomNav() {
       <NavigationMenu>
         <NavigationMenuList className="flex gap-6">
           <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
+            <Link href="/" passHref>
               <NavigationMenuLink className="flex flex-col items-center text-sm text-gray-700 hover:text-black">
                 <Home size={20} />
                 Home
@@ -24,7 +24,7 @@ export function BottomNav() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/achievements" legacyBehavior passHref>
+            <Link href="/achievements" passHref>
               <NavigationMenuLink className="flex flex-col items-center text-sm text-gray-700 hover:text-black">
                 <Trophy size={20} />
                 Achievements
@@ -33,7 +33,7 @@ export function BottomNav() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/profile" legacyBehavior passHref>
+            <Link href="/profile" passHref>
               <NavigationMenuLink className="flex flex-col items-center text-sm text-gray-700 hover:text-black">
                 <User size={20} />
                 Profile
